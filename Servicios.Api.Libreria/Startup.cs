@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Servicios.Api.Libreria.Core;
 using Servicios.Api.Libreria.Core.ContextMongoDB;
 using Servicios.Api.Libreria.Repository;
@@ -48,6 +49,23 @@ namespace Servicios.Api.Libreria
             services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Servicios.Api.Libreria", Version = "v1" });
+            });
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsRule", rule =>
+                {
+                    //rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://mylocalpage.com"); 
+
+                    //El * nos permite hacer nuestra app accesible/publica
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +77,8 @@ namespace Servicios.Api.Libreria
             }
 
             app.UseRouting();
+
+            app.UseCors("CorsRule");
 
             app.UseAuthorization();
 
