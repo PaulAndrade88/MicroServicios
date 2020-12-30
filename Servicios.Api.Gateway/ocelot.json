@@ -1,0 +1,137 @@
+{
+  "Routes": [
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8562
+        }
+      ],
+      "DownstreamPathTemplate": "/api/LibreriaAutor",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/autor"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8562
+        }
+      ],
+      "DownstreamPathTemplate": "/api/LibreriaAutor/{id}",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "GET", "UPDATE", "DELETE" ],
+      "UpstreamPathTemplate": "/autor/{id}"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8562
+        }
+      ],
+      "DownstreamPathTemplate": "/api/LibreriaAutor/pagination",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST" ],
+      "UpstreamPathTemplate": "/autor/pagination"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8563
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Usuario",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamPathTemplate": "/Usuario"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8563
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Usuario/registrar",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST" ],
+      "UpstreamPathTemplate": "/Usuario/registrar"
+    },
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8563
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Usuario/login",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST" ],
+      "UpstreamPathTemplate": "/Usuario/login"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8562
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Libro",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "UpstreamPathTemplate": "/libro"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8562
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Libro/{id}",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamPathTemplate": "/libro/{id}"
+    },
+    {
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8562
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Libro/pagination",
+      "DownstreamScheme": "http",
+      "UpstreamHttpMethod": [ "POST" ],
+      "UpstreamPathTemplate": "/libro/pagination"
+    }
+  ]
+}
+
